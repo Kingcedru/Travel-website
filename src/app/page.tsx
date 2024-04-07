@@ -1,5 +1,13 @@
+"use client"
+
 import Image from "next/image";
-import forestStay from "../../public/forest-stay.png"
+import forestStay from "../../public/backgrounds/forest-stay.png"
+import sunset from "../../public/backgrounds/sunset.png"
+import tree from "../../public/backgrounds/tree-house.png"
+import tracking from "../../public/backgrounds/tracking.png"
+import forestTrack from "../../public/backgrounds/forest-track.png"
+
+
 import account from "../../public/social/account_circle.png"
 import search from "../../public/social/search.png"
 import facebook from "../../public/social/facebook.png"
@@ -9,17 +17,19 @@ import rectangle from "../../public/shapes/Rectangle.svg"
 import arrow from "../../public/shapes/Arrow.svg"
 import menu from "../../public/social/menu.svg"
 import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
+  const [backImage, setBackImage] = useState(forestStay)
   return (
     <>
     <Head>
       <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin></link>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></link>
     </Head>
     <main>
-        <Image className="h-screen relative w-full" src={forestStay} alt="background image" />
+        <Image className="h-screen relative w-full" src={backImage} alt="background image" />
         <section className="z-0 w-full h-screen top-0 absolute flex justify-between text-white">
           {/* left section */}
           <div className="left flex flex-col justify-between bg-black bg-opacity-30 px-2 font-Poppins">
@@ -69,11 +79,11 @@ export default function Home() {
             </div>
             <div className="boxes grid grid-cols-2 text-lg">
                 <div></div>
-                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Forest stay</div>
-                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Sunset</div>
-                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Tree House</div>
-                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Forest Track</div>
-                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Tracking</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500" onClick={()=> setBackImage(forestStay)}>Forest stay</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500" onClick={()=> setBackImage(sunset)}>Sunset</div>
+                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500" onClick={()=> setBackImage(tree)}>Tree House</div>
+                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500" onClick={()=> setBackImage(forestTrack)}>Forest Track</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500" onClick={()=> setBackImage(tracking)}>Tracking</div>
             </div>
           </div>
         </section>

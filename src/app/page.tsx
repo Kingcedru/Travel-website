@@ -8,14 +8,21 @@ import linkedin from "../../public/social/linkedin.png"
 import rectangle from "../../public/shapes/Rectangle.svg"
 import arrow from "../../public/shapes/Arrow.svg"
 import menu from "../../public/social/menu.svg"
+import Head from "next/head";
 
 export default function Home() {
   return (
+    <>
+    <Head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></link>
+    </Head>
     <main>
         <Image className="h-screen relative w-full" src={forestStay} alt="background image" />
         <section className="z-0 w-full h-screen top-0 absolute flex justify-between text-white">
           {/* left section */}
-          <div className="left flex flex-col justify-between bg-black bg-opacity-30 px-2">
+          <div className="left flex flex-col justify-between bg-black bg-opacity-30 px-2 font-Poppins">
             <div className="flex flex-col items-center gap-8 pt-8">
               <Image className="w-3/6" src={account} alt="account icon" />
               <Image className="w-3/6" src={search} alt="search icon" />
@@ -28,11 +35,11 @@ export default function Home() {
             </div>
           </div>
           {/* middle section */}
-          <div className="middle h-screen w-full flex flex-col justify-center items-start gap-8 pl-32 ">
-            <div>
-              <h1 className="text-6xl font">Adventure</h1>
-              <h1 className="text-6xl">awaits.</h1>
-              <h1 className="text-6xl">Let's go!</h1>
+          <div className="middle h-screen w-full flex flex-col justify-center items-start gap-8 pl-32">
+            <div className="space-y-2 font-Poppins">
+              <h1 className="text-6xl tracking-widest">Adventure</h1>
+              <h1 className="text-6xl tracking-widest">awaits.</h1>
+              <h1 className="text-6xl tracking-widest">{"Let's go!"}</h1>
             </div>
             <div>
               <div className=" relative ">
@@ -41,17 +48,17 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h2 className="font-semibold">Forest Stay</h2>
+              <h2 className="text-xl font-extrabold tracking-wider">Forest Stay</h2>
             </div>
             <div className="flex flex-col gap-8">
-              <div>
-                <h1>Integration with social media</h1>
-                <h1>platforms for sharing travel</h1>
-                <h1>platforms for sharing travel</h1>
+              <div className="text-lg">
+                <h1 className="tracking-wider">Integration with social media</h1>
+                <h1 className="tracking-wider">platforms for sharing travel</h1>
+                <h1 className="tracking-wider">platforms for sharing travel</h1>
               </div>
-              <div>
-                <h1>Integration with social media</h1>
-                <h1>platforms for sharing</h1>
+              <div className="text-lg">
+                <h1 className="tracking-wider">Integration with social media</h1>
+                <h1 className="tracking-wider">platforms for sharing</h1>
               </div>
             </div>
           </div>
@@ -60,7 +67,7 @@ export default function Home() {
             <div className="flex justify-end">
               <Image className="w-2/6" src={menu} alt="menu icon for navigation" />
             </div>
-            <div className="boxes grid grid-cols-2">
+            <div className="boxes grid grid-cols-2 text-lg">
                 <div></div>
                 <div className="bg-white bg-opacity-25 py-20 px-16">Forest stay</div>
                 <div className="bg-white bg-opacity-25 py-20 px-16">Sunset</div>
@@ -71,5 +78,6 @@ export default function Home() {
           </div>
         </section>
     </main>
+    </>
   );
 }

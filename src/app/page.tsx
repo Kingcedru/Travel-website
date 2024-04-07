@@ -24,14 +24,14 @@ export default function Home() {
           {/* left section */}
           <div className="left flex flex-col justify-between bg-black bg-opacity-30 px-2 font-Poppins">
             <div className="flex flex-col items-center gap-8 pt-8">
-              <Image className="w-3/6" src={account} alt="account icon" />
-              <Image className="w-3/6" src={search} alt="search icon" />
+              <Image className="w-2/6" src={account} alt="account icon" />
+              <Image className="w-2/6" src={search} alt="search icon" />
             </div>
-            <h1 className="-rotate-90 text-xl font-thin">traveler</h1>
+            <h1 className="-rotate-90 text-xl tracking-widest">traveler</h1>
             <div className="flex flex-col items-center gap-8 pb-8">
-            <Image className="w-2/6" src={facebook} alt="facebook icon" />
-              <Image className="w-2/6" src={instagram} alt="instagram" />
-              <Image className="w-2/6" src={linkedin} alt="linkedIn icon" />
+            <Image className="w-1/6" src={facebook} alt="facebook icon" />
+              <Image className="w-1/6" src={instagram} alt="instagram" />
+              <Image className="w-1/6" src={linkedin} alt="linkedIn icon" />
             </div>
           </div>
           {/* middle section */}
@@ -69,11 +69,11 @@ export default function Home() {
             </div>
             <div className="boxes grid grid-cols-2 text-lg">
                 <div></div>
-                <div className="bg-white bg-opacity-25 py-20 px-16">Forest stay</div>
-                <div className="bg-white bg-opacity-25 py-20 px-16">Sunset</div>
-                <div className="py-20 px-16">Tree House</div>
-                <div className="py-20 px-16">Forest Track</div>
-                <div className="bg-white bg-opacity-25 py-20 px-16">Tracking</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Forest stay</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Sunset</div>
+                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Tree House</div>
+                <div className="py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Forest Track</div>
+                <div className="bg-white bg-opacity-25 py-20 px-16 cursor-pointer hover:border-2 border-blue-500">Tracking</div>
             </div>
           </div>
         </section>

@@ -13,9 +13,15 @@ function SignIn() {
         alt="account"
       />
       <div className="grid grid-cols-2 absolute top-52 mx-28 shadow-slate-900 shadow-2xl rounded-md ">
-        <div className="">
+        <div className="relative">
           <Image className="" src={background} alt="account" />
-          <h1 className="absolute top-40 text-white">ENJOY THE WORLD</h1>
+          <div className="absolute flex flex-col top-40 text-white text-5xl font-semibold px-14 gap-3">
+            <h1 className="">ENJOY THE</h1>
+            <h1 className="">WORLD</h1>
+          </div>
+          <div className="absolute flex left-40 top-96 px-14 pt-4">
+            <Button name="Sign In" />
+          </div>
         </div>
         <div className="flex flex-col items-center h-full w-full justify-between bg-green-950 opacity-85 py-5 text-white ">
           <h1 className="font-bold text-4xl">Create An Account</h1>
@@ -41,7 +47,7 @@ function SignIn() {
               id="password"
               label="Password"
             />
-            <Button />
+            <Button name="Sign Up" />
           </form>
         </div>
       </div>

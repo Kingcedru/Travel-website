@@ -17,7 +17,6 @@ import arrow from "../../public/shapes/Arrow.svg";
 import menu from "../../public/social/menu.svg";
 import Head from "next/head";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export default function Home() {

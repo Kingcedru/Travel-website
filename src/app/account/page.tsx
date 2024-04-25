@@ -1,13 +1,22 @@
-'use client'
-import React, { useRef, useState } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import background from "../../../public/backgrounds/man.jpg";
 import Image from "next/image";
 import Button from "../components/Button";
 import InputFields from "../components/InputFields";
+import { FaEye } from "react-icons/fa";
+import { GoEyeClosed } from "react-icons/go";
+import handleRequests from "../utils/apiRoutes";
 
 function SignIn() {
   const formInputs = useRef();
-  const [data, setData] = useState()
+  const [data, setData] = useState();
+  const [showPassword, setShowPassword] = useState(false);
+
+  useEffect(()=>{
+    handleRequests(data);
+    console.log(data);
+  },[data])
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -32,7 +41,7 @@ function SignIn() {
             <h1 className="">WORLD</h1>
           </div>
           <div className="absolute flex left-40 top-96 px-14 pt-4">
-            <Button name="Sign In" />
+            <Button text="Sign In" />
           </div>
         </div>
         <div className="flex flex-col items-center h-full w-full justify-between bg-green-950 opacity-85 py-5 text-white ">
@@ -58,11 +67,13 @@ function SignIn() {
               name="email"
             />
             <InputFields
-              type="password"
+              type={!showPassword ? "password" : "text"}
               placeholder="Enter your password"
               id="password"
               label="Password"
               name="password"
+              icon={showPassword ? <FaEye /> : <GoEyeClosed />}
+              clicked={() => setShowPassword(!showPassword)}
             />
             <Button text="Sign Up" />
           </form>

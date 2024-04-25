@@ -1,10 +1,22 @@
-import React from "react";
+'use client'
+import React, { useRef, useState } from "react";
 import background from "../../../public/backgrounds/man.jpg";
 import Image from "next/image";
 import Button from "../components/Button";
 import InputFields from "../components/InputFields";
 
 function SignIn() {
+  const formInputs = useRef();
+  const [data, setData] = useState()
+
+  const handleForm = (e) => {
+    e.preventDefault();
+    const name = formInputs.current.username.value;
+    const email = formInputs.current.email.value;
+    const password = formInputs.current.password.value;
+    setData({ name, email, password });
+  };
+
   return (
     <div className="h-screen ">
       <Image
@@ -26,6 +38,8 @@ function SignIn() {
         <div className="flex flex-col items-center h-full w-full justify-between bg-green-950 opacity-85 py-5 text-white ">
           <h1 className="font-bold text-4xl">Create An Account</h1>
           <form
+            ref={formInputs}
+            onSubmit={handleForm}
             action=""
             className="flex flex-col gap-5 items-center justify-center"
           >
@@ -34,20 +48,23 @@ function SignIn() {
               placeholder="Enter your username"
               id="username"
               label="UserName"
+              name="username"
             />
             <InputFields
               type="email"
               placeholder="Enter your email"
               id="email"
               label="Email"
+              name="email"
             />
             <InputFields
               type="password"
               placeholder="Enter your password"
               id="password"
               label="Password"
+              name="password"
             />
-            <Button name="Sign Up" />
+            <Button text="Sign Up" />
           </form>
         </div>
       </div>

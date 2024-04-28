@@ -1,6 +1,18 @@
 "use client";
 
-function InputFields(prop) {
+import React, { ReactHTML, ReactHTMLElement, ReactNode } from "react";
+
+interface InputData{
+  label: string;
+  id: string;
+  type: string;
+  placeholder: string;
+  name: string;
+  icon?: React.ReactNode;
+  clicked?: React.MouseEventHandler<HTMLDivElement>;
+}
+
+function InputFields(prop:InputData) {
   return (
     <div className="grid gap-2">
       <label htmlFor={prop.id} className="text-white">

@@ -1,7 +1,11 @@
 'use client'
 import React from "react";
 
-function Button(prop) {
+interface ButtonProps{
+  text: string;
+}
+
+function Button(prop:ButtonProps) {
   return (
     <div>
       <button

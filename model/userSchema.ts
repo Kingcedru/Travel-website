@@ -1,8 +1,6 @@
-import { timeStamp } from "console";
 import mongoose, { Schema } from "mongoose";
-import { tree } from "next/dist/build/templates/app-page";
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -21,6 +19,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const Users = mongoose.model.Users || mongoose.model("Users", userSchema);
+const Users = mongoose.models.Users || mongoose.model('Users', userSchema)
 
 export default Users;

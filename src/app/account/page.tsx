@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import background from "../../../public/backgrounds/man.jpg";
 import Image from "next/image";
 import Button from "../components/Button";
@@ -7,18 +7,18 @@ import InputFields from "../components/InputFields";
 import { FaEye } from "react-icons/fa";
 import { GoEyeClosed } from "react-icons/go";
 import handleRequests from "../utils/apiRoutes";
+import UserData from "../utils/userInterface";
 
 function SignIn() {
   const formInputs = useRef();
-  const [data, setData] = useState();
+  const [data, setData] = useState<UserData>();
   const [showPassword, setShowPassword] = useState(false);
 
-  useEffect(()=>{
-    handleRequests(data);
-    console.log(data);
-  },[data])
+  useEffect(() => {
+    handleRequests(data as UserData);
+  }, [data]);
 
-  const handleForm = (e) => {
+  const handleForm = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const name = formInputs.current.username.value;
     const email = formInputs.current.email.value;

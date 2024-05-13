@@ -1,5 +1,10 @@
 "use client";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, {
+  ChangeEvent,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import background from "../../../public/backgrounds/man.jpg";
 import Image from "next/image";
 import Button from "../components/Button";

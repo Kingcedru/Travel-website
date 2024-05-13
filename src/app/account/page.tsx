@@ -1,6 +1,7 @@
 "use client";
 import React, {
   ChangeEvent,
+  FormEventHandler,
   useEffect,
   useRef,
   useState,
@@ -13,9 +14,10 @@ import { FaEye } from "react-icons/fa";
 import { GoEyeClosed } from "react-icons/go";
 import handleRequests from "../utils/apiRoutes";
 import UserData from "../utils/userInterface";
+import { RefObject } from "react";
 
 function SignIn() {
-  const formInputs = useRef();
+  const formInputs: RefObject<HTMLFormElement> = useRef(null);
   const [data, setData] = useState<UserData>();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -23,12 +25,14 @@ function SignIn() {
     handleRequests(data as UserData);
   }, [data]);
 
-  const handleForm = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleForm: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    const name = formInputs.current.username.value;
-    const email = formInputs.current.email.value;
-    const password = formInputs.current.password.value;
-    setData({ name, email, password });
+    if (formInputs.current) {
+      const name = formInputs.current.username.value;
+      const email = formInputs.current.email.value;
+      const password = formInputs.current.password.value;
+      setData({ name, email, password });
+    }
   };
 
   return (
